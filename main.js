@@ -4,34 +4,44 @@ function getComputerChoice(){
     return choices[choice]
 }
 
-function play(){
-    playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
-    computerSelection = getComputerChoice().toLowerCase();
-    console.log(computerSelection);
-    console.log(playerSelection);
+function play(playerSelection, computerSelection){
     switch (computerSelection){
         case playerSelection:
-            console.log("It's a tie!");
-            break;
+            return("It's a tie!");
         case 'rock':
             if (playerSelection=='paper'){
-                console.log('You won!');
+                return('You won!');
             } else{
-                console.log('You Lost!');
-            } break;
+                return('You Lost!');
+            }
         case 'paper':
             if (playerSelection=='scissor'){
-                console.log('You won!');
+                return('You won!');
             } else{
-                console.log('You Lost!');
-            } break;
+                return('You Lost!');
+            }
         case 'scissor':
             if (playerSelection=='rock'){
-                console.log('You won!');
+                return('You won!');
             } else{
-                console.log('You Lost!');
-            } break;
+                return('You Lost!');
+            }
     }
 }
-console.log("hello");
-play();
+
+function game(){
+    let score = 0;
+    for (let i=0; i<5; i++){
+        const playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+        const computerSelection = getComputerChoice().toLowerCase();
+        let result = play(playerSelection, computerSelection);
+        console.log(result);
+        if (result == 'You won!'){
+            score+=1;
+        }
+        console.log(score);
+    }
+    
+}
+
+game();
