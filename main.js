@@ -8,24 +8,28 @@ function play(playerSelection, computerSelection){
     switch (computerSelection){
         case playerSelection:
             return("It's a tie!");
+            break;
         case 'rock':
             if (playerSelection=='paper'){
-                return('You won!');
+                return(`You won${playerSelection} beats ${computerSelection}`);
             } else{
-                return('You Lost!');
+                return(`You lose ${computerSelection} beats ${playerSelection}`);
             }
+            break;
         case 'paper':
             if (playerSelection=='scissor'){
-                return('You won!');
+                return(`You won${playerSelection} beats ${computerSelection}`);
             } else{
-                return('You Lost!');
+                return(`You lose ${computerSelection} beats ${playerSelection}`);
             }
+            break;
         case 'scissor':
             if (playerSelection=='rock'){
-                return('You won!');
+                return(`You won${playerSelection} beats ${computerSelection}`);
             } else{
-                return('You Lost!');
+                return(`You lose ${computerSelection} beats ${playerSelection}`);
             }
+            break;
     }
 }
 
@@ -36,7 +40,7 @@ function game(){
         const computerSelection = getComputerChoice().toLowerCase();
         let result = play(playerSelection, computerSelection);
         console.log(result);
-        if (result == 'You won!'){
+        if (result.includes('won')){
             score+=1;
         }
         console.log(score);
@@ -44,4 +48,4 @@ function game(){
     
 }
 
-game();
+// game();
