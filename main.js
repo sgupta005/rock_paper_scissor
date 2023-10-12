@@ -8,6 +8,7 @@ result_div.appendChild(result_heading);
 rock_btn.addEventListener('click', playerChoice);
 paper_btn.addEventListener('click', playerChoice);
 scissor_btn.addEventListener('click', playerChoice);
+
 function playerChoice(event){
     if (event.target.classList.contains('rock')){
         playRound('rock');
@@ -17,7 +18,6 @@ function playerChoice(event){
         playRound('scissors');
     }
 }
-
 
 function getComputerChoice(){
     choices = ['rock','paper','scissors']
@@ -53,7 +53,6 @@ function play(playerSelection, computerSelection){
             break;
     }
 }
-
 
 let computer_score = 0;
 let player_score = 0;
